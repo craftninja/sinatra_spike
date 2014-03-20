@@ -1,8 +1,10 @@
+
+
 <html>
 <a href="new/">So you want to add a new dish?</a>
 <ul>
-  <li>Sally's delicious Special Spaghetti - <a href="/item/1/">Show Item</a></li>
-  <li>Will's delectable Wild Wings - <a href="/item/2/">Show Item</a></li>
-  <li>Bob's delightful Buffalo Burgers - <a href="/item/3/">Show Item</a></li>
+  <% ItemRepository.new.create_items.each do |item| %>
+    <li><%= item.name %> - <a href="/item/#{item.name}/">Show Item</a></li>
+  <% end %>
 </ul>
 </html>
