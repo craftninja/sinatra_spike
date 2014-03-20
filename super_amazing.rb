@@ -1,5 +1,9 @@
 require 'sinatra'
 
 get '/' do
-  "This is the super amazing Sinatra app and it reloads automatically!"
+  erb :index
+end
+
+get '/items/' do
+  erb :items
 end
