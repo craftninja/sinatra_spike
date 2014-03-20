@@ -4,7 +4,7 @@
 <a href="new/">So you want to add a new dish?</a>
 <ul>
   <% ItemRepository.new.create_items.each do |item| %>
-    <li><%= item.name %> - <a href="/item/#{item.name}/">Show Item</a></li>
+    <li><%= item.name %> - <a href="/item/<%= item.id %>/">Show Item</a></li>
   <% end %>
 </ul>
 </html>
