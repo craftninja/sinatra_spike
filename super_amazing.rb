@@ -27,9 +27,12 @@ end
 get '/items/:id' do
   item_id = params[:id].to_i
   all_items = ItemRepository.new.create_items
-  @item = all_items[item_id-1]
-
-  erb :item
+  if all_items[item_id-1] == nil
+    "What you are talking about? That is not even on the menu."
+  else
+    @item = all_items[item_id-1]
+    erb :item
+  end
 end
 
 post '/items' do
@@ -38,4 +41,8 @@ post '/items' do
   @items = ItemRepository.new.create_items
 
   erb :items
+end
+
+not_found do
+  erb :not_found_404
 end
