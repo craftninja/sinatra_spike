@@ -1,7 +1,7 @@
 
 
 <html>
-<a href="new/">So you want to add a new dish?</a>
+<a href="items/new">So you want to add a new dish?</a>
 <ul>
   <% @items.each do |item| %>
     <li><%= item.name %> - <a href="/item/<%= item.id %>/">Show Item</a></li>
