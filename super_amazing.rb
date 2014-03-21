@@ -24,6 +24,14 @@ get '/items/new' do
   erb :new
 end
 
+get '/items/:id' do
+  item_id = params[:id].to_i
+  all_items = ItemRepository.new.create_items
+  @item = all_items[item_id-1]
+
+  erb :item
+end
+
 post '/items' do
   name = params[:name]
   IO.write("./config/menu.csv", "\n#{name},#{IO.readlines("./config/menu.csv").length}", IO.read("./config/menu.csv").length)
