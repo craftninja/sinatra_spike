@@ -19,11 +19,3 @@ get '/items' do
   end
   erb :items
 end
-
-
-#get '/posts' do
-#  +  # matches "GET /posts?title=foo&author=bar"
-#  +  title = params[:title]
-#  +  author = params[:author]
-#  +  # uses title and author variables; query is optional to the /posts route
-#  +end
